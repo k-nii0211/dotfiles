@@ -1,0 +1,43 @@
+#
+# alias
+#
+alias la="ls -a"
+alias lf="ls -F"
+alias ll="ls -l"
+alias lla='ls -la'
+
+alias 'ps?'='pgrep -l -f'
+
+alias du="du -h"
+alias df="df -h"
+alias duh="du -h ./ --max-depth=1"
+
+alias su="su -l"
+
+alias less='less -r'
+
+# grep
+alias 'grep'='grep --color=auto -ERUIn'
+
+# tmux
+alias tma='tmux attach'
+alias tma0='tmux attach -t 0'
+alias tma1='tmux attach -t 1'
+alias tma2='tmux attach -t 2'
+alias tml='tmux list-sessions'
+
+# git
+alias ga='git add .'
+alias gs='git status -s -b'
+alias gst="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
+
+grepvim() {
+    XFS=`grep -ERUInl $* | uniq | xargs`
+    if [ "$XFS" ] ; then
+      vim `grep -ERUInl $* | uniq | xargs`
+    fi
+}
+alias grv='grepvim'
+
+# unalias oh-my-zsh plugin extract alias
+unalias x

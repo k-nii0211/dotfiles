@@ -1,0 +1,11 @@
+*.log
+*.sw[po]
+*.o
+.svn
+tags
+TAGS
+
+.zshrc.local
+
+.vim/bundle/
+.vim/.netrwhist

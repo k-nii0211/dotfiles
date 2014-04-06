@@ -1,0 +1,262 @@
+"
+" plugin settings
+"
+
+"------------------------------------
+" YankRing.vim
+"------------------------------------
+" Yankの履歴参照
+nmap ,y ;YRShow<CR>
+
+"------------------------------------
+" MiniBufExplorer
+"------------------------------------
+let g:miniBufExplMapWindowNavVim=1
+let g:miniBufExplSplitBelow=0
+let g:miniBufExplMapWindowNavArrows=1
+let g:miniBufExplMapCTabSwitchBufs=1
+let g:miniBufExplModSelTarget=1
+let g:miniBufExplSplitToEdge=1
+let g:miniBufExplMaxSize = 10
+
+command! Mt :TMiniBufExplorer
+
+"------------------------------------
+" Align
+"------------------------------------
+let g:Align_xstrlen = 3
+
+"------------------------------------
+" VTreeExplorer
+"------------------------------------
+" 縦に表示する
+let g:treeExplVertical=1
+
+"------------------------------------
+" NERD_commenter.vim
+"------------------------------------
+" コメントの間にスペースを空ける
+let NERDSpaceDelims = 1
+"<Leader>xでコメントをトグル(NERD_commenter.vim)
+map <Leader>x, c<space>
+""未対応ファイルタイプのエラーメッセージを表示しない
+let NERDShutUp=1
+
+" ------------------------------------
+" grep.vim
+"------------------------------------
+" 検索外のディレクトリ、ファイルパターン
+let Grep_Skip_Dirs = '.svn .git .hg'
+let Grep_Skip_Files = '*.bak *~'
+
+"------------------------------------
+" surround.vim
+"------------------------------------
+" s, ssで選択範囲を指定文字でくくる
+nmap s <Plug>Ysurround
+nmap ss <Plug>Yssurround
+let g:surround_{char2nr('e')} = "begin \r end"
+let g:surround_{char2nr('d')} = "do \r end"
+let g:surround_{char2nr("-")} = ":\r"
+
+"------------------------------------
+" Fugitive.vim
+"------------------------------------
+nnoremap <Space>gd :<C-u>Gdiff<Enter>
+nnoremap <Space>gs :<C-u>Gstatus<Enter>
+nnoremap <Space>gl :<C-u>Glog<Enter>
+nnoremap <Space>ga :<C-u>Gwrite<Enter>
+nnoremap <Space>gc :<C-u>Gcommit<Enter>
+nnoremap <Space>gC :<C-u>Git commit --amend<Enter>
+nnoremap <Space>gb :<C-u>Gblame<Enter>
+
+
+"------------------------------------
+" BufExplorer
+"------------------------------------
+nnoremap <leader>l<Space> :BufExplorer<CR>
+
+"------------------------------------
+" VTreeExplorer
+"------------------------------------
+let g:treeExplVertical=1
+"<Leader>t<Space>でディレクトリツリー表示
+noremap <Leader>t<Space> :VSTreeExplore<CR>
+"分割したウィンドウのサイズ
+let g:treeExplWinSize=30
+
+"------------------------------------
+" DumbBuf.vim
+"------------------------------------
+"<Leader>b<Space>でBufferList
+let dumbbuf_hotkey = '<Leader>b<Space>'
+let dumbbuf_mappings = {
+    \ 'n': {
+        \'<Esc>': { 'opt': '<silent>', 'mapto': ':<C-u>close<CR>' }
+    \}
+\}
+let dumbbuf_single_key  = 1
+let dumbbuf_updatetime  = 1    " &updatetimeの最小値
+let dumbbuf_wrap_cursor = 0
+let dumbbuf_remove_marked_when_close = 1
+
+"------------------------------------
+" vim-indent-guides
+"------------------------------------
+nnoremap <silent> <Space>id :<C-u>IndentGuidesToggle<Enter>
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 4
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+if 'dark' == &background
+    hi IndentGuidesOdd  ctermbg=black
+    hi IndentGuidesEven ctermbg=darkgrey
+else
+    hi IndentGuidesOdd  ctermbg=white
+    hi IndentGuidesEven ctermbg=lightgrey
+endif
+
+
+"------------------------------------
+" smooth_scroll.vim
+"------------------------------------
+map  :call SmoothScroll("d",1, 1)<CR>
+map  :call SmoothScroll("u",1, 1)<CR>
+
+"------------------------------------
+" gundo.Vim
+"------------------------------------
+" nmap U :<C-u>GundoToggle<CR>
+
+"------------------------------------
+" taglist.Vim
+"------------------------------------
+" 関数一覧
+set tags=tags
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Enable_Fold_Column = 1
+let Tlist_Auto_Open = 1
+let Tlist_Auto_Update = 1
+let Tlist_WinWidth = 40
+""map <silent><leader>l :Tlist<CR>
+nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+map <F8> <ESC>:TlistToggle<CR>
+"nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+
+"------------------------------------
+" Srcexp
+"------------------------------------
+let g:SrcExpl_UpdateTags    = 1
+let g:SrcExpl_RefreshTime   = 0
+let g:SrcExpl_WinHeight     = 9
+let g:SrcExpl_RefreshMapKey = "<Space>"
+let g:SrcExpl_GoBackMapKey  = "<C-b>"
+" Source Explorerの機能ON/OFF
+nmap <F9> :CMiniBufExplorer<CR>:SrcExplToggle<CR>:TMiniBufExplorer<CR>
+
+"------------------------------------
+" operator-camelize.vim
+"------------------------------------
+" camel-caseへの変換
+map <leader>u <Plug>(operator-camelize)
+map <leader>U <Plug>(operator-decamelize)
+
+"------------------------------------
+" operator-replace.vim
+"------------------------------------
+" RwなどでYankしてるもので置き換える
+map R <Plug>(operator-replace)
+
+"------------------------------------
+" sumartword.vim
+"------------------------------------
+noremap ,w  w
+noremap ,b  b
+noremap ,e  e
+noremap ,ge  ge
+
+map W  <Plug>(smartword-w)
+map B  <Plug>(smartword-b)
+map E  <Plug>(smartword-e)
+map ge  <Plug>(smartword-ge)
+
+"------------------------------------
+" camelcasemotion.vim
+"------------------------------------
+
+" <Shift-wbe>でCameCaseやsnake_case単位での単語移動
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+" text-objectで使用できるように
+omap <silent> iw <Plug>CamelCaseMotion_iw
+xmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+xmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+xmap <silent> ie <Plug>CamelCaseMotion_ie
+
+"------------------------------------
+" errormarker.vim
+"------------------------------------
+" disable default shortcut mapping and re-define to <Leader>ec
+let g:errormarker_disablemappings = 1
+nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
+
+"------------------------------------
+" Pydiction
+"------------------------------------
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
+"------------------------------------
+" Syntastic
+"------------------------------------
+let g:syntastic_enable_signs = 1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_loc_list=1
+
+"------------------------------------
+" toggle.vim
+"------------------------------------
+imap <C-A> <Plug>ToggleI
+nmap <C-A> <Plug>ToggleN
+vmap <C-A> <Plug>ToggleV
+
+let g:toggle_pairs = {'true':'false', 'false':'true', 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
+
+"------------------------------------
+" vimfiler
+"------------------------------------
+if neobundle#tap('vimfiler.vim') " {{{
+  call neobundle#config({
+        \ 'autoload' : {
+        \   'commands' : [
+        \     { 'name' : 'VimFiler', 'complete' : 'customlist,vimfiler#complete' },
+        \     { 'name' : 'VimFilerExplorer', 'complete' : 'customlist,vimfiler#complete' },
+        \     { 'name' : 'Edit', 'complete' : 'customlist,vimfiler#complete' },
+        \     { 'name' : 'Write', 'complete' : 'customlist,vimfiler#complete' },
+        \     'Read',
+        \     'Source'
+        \   ],
+        \   'mappings' : '<Plug>(vimfiler_',
+        \   'explorer' : 1,
+        \ }
+        \ })
+  let g:vimfiler_safe_mode_by_default = 0
+  let g:unite_kind_file_use_trashbox = 1
+  let g:vimfiler_as_default_explorer = 1
+
+  nnoremap <Space>e  :<C-u>VimFilerExplorer -winwidth=65<CR>
+endif " }}}
+
+"------------------------------------
+" GoLang gocde
+"------------------------------------
+"set completeopt=menu,preview
+
+source ~/dotfiles/.vimrc.plugins_setting.neocomplete
+source ~/dotfiles/.vimrc.plugins_setting.quickrun
+source ~/dotfiles/.vimrc.plugins_setting.unite
+source ~/dotfiles/.vimrc.plugins_setting.vimshell

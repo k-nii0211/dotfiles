@@ -1,0 +1,9 @@
+[user]
+	name = Nii Kenichi
+	email = nii_kenichi@cyberagent.co.jp
+[color]
+	ui = auto
+[push]
+	default = simple
+[core]
+	excludesfile = ~/env/.gitignore_global

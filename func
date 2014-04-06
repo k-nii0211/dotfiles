@@ -1,0 +1,67 @@
+#!/bin/sh
+
+function check_cmds {
+  case "${OSTYPE}" in
+  darwin*)
+    [ -z `which brew 2> /dev/null` ] && echo "no such brew" ;;
+  linux*)
+    [ -z `which yum 2> /dev/null` ] && echo "no such yum" ;;
+  *)
+    echo "unknwon os type ${OSTYPE}"
+    exit 1
+    ;;
+  esac
+
+  cmds="
+  git
+  curl
+  vim
+  zsh
+  python
+  easy_install
+  "
+  for cmd in $cmds; do
+      if [ -z `which ${cmd} 2> /dev/null` ]; then
+          echo "no such ${cmd}."
+          exit 1
+      fi
+  done
+
+}
+
+function setup_oh_my_zsh {
+  if [ ! -d ~/.oh-my-zsh ]; then
+    echo "install oh-my-zsh"
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  fi
+}
+
+function setup_rbenv {
+  local rc_file="~/.bash_profile"
+  if [ -z `which rbenv 2> /dev/null` ]; then
+    echo "install rbenv"
+    git clone https://github.com/sstephenson/rbenv.git ~/.rbenv/
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $rc_file
+    echo 'eval "$(rbenv init -)"' >> $rc_file
+    source $rc_file
+
+    #rbenv install 1.9.3-p545 && rbenv global && rbenv rehash
+  fi
+}
+
+function setup_pip {
+  if [ -z `which pip 2> /dev/null` ]; then
+    echo "install pip"
+    easy_install pip
+  fi
+}
+
+function setup_neobundle {
+  if [ ! -d ~/.vim/bundle ]; then
+    echo "install neobundle.vim"
+    mkdir -p ~/.vim/bundle
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    vim -c ':NeoBundleInstall'
+  fi
+}

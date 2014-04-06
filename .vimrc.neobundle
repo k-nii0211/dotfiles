@@ -1,0 +1,189 @@
+"
+" neobundle
+"   Brief help
+"   :NeoBundleList          - list configured bundles
+"   :NeoBundleInstall(!)    - install(update) bundles
+"   :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+filetype off
+
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"{
+  NeoBundle 'scrooloose/nerdcommenter.git'
+"  NeoBundle 'c9s/cascading.vim'
+"  NeoBundle 'nathanaelkane/vim-indent-guides'
+  NeoBundle 'xmledit'
+  NeoBundle 'Align'
+"  NeoBundle 'h1mesuke/vim-alignta'
+"  NeoBundle 'godlygeek/tabular'
+"  NeoBundle 'Gundo'
+  NeoBundle 'anyakichi/vim-surround'
+"  NeoBundle 'smartchr'
+"  NeoBundle 'operator-user'
+"  NeoBundle 'operator-camelize'
+"  NeoBundle 'operator-replace'
+
+  NeoBundle 'kana/vim-textobj-user'
+  NeoBundle 'kana/vim-textobj-entire', { 'depends' : 'kana/vim-textobj-user' }
+  NeoBundle 'kana/vim-textobj-function', { 'depends' : 'kana/vim-textobj-user' }
+  NeoBundle 'kana/vim-textobj-indent', { 'depends' : 'kana/vim-textobj-user' }
+  NeoBundle 'rhysd/vim-textobj-ruby', { 'depends' : 'kana/vim-textobj-user' }
+  NeoBundle 'osyo-manga/vim-textobj-multiblock', { 'depends' : 'kana/vim-textobj-user' }
+  NeoBundle 'osyo-manga/vim-textobj-multitextobj', { 'depends' : 'kana/vim-textobj-user' }
+
+"
+"  NeoBundle 'thinca/vim-textobj-plugins.git'
+"  NeoBundle 'kana/vim-textobj-syntax.git'
+"  NeoBundle 'kana/vim-textobj-lastpat.git'
+"  NeoBundle 'textobj-rubyblock'
+"  NeoBundle 'textobj-jabraces'
+   NeoBundle 'taku-o/vim-toggle'
+   NeoBundle 'Shougo/vimfiler.vim'
+"}
+
+" complcache {
+"  NeoBundle 'Shougo/neocomplcache'
+"  NeoBundleLazy 'Shougo/neocomplcache-rsense'
+  NeoBundle 'Shougo/neocomplete'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
+  NeoBundle 'Shougo/neobundle-vim-scripts'
+  NeoBundle 'ujihisa/neco-ghc'
+"  NeoBundle 'honza/snipmate-snippets'
+"  NeoBundle 'm2ym/rsense'
+"  NeoBundle 'taichouchou2/vim-rsense'
+"}
+
+" Searching/Moving {
+"  NeoBundle 'Smooth-Scroll'
+  NeoBundle 'yuroyoro/smooth_scroll.vim'
+  NeoBundle 'smartword'
+  NeoBundle 'camelcasemotion'
+  NeoBundle 'EasyMotion'
+  NeoBundle 'matchit.zip'
+  NeoBundle 'grep.vim'
+  NeoBundle 'eregex.vim'
+
+"  http://blog.glidenote.com/blog/2013/02/28/the-silver-searcher-better-than-ack/
+"  NeoBundle 'rking/ag.vim'
+"}
+
+" Programming {
+  NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'thinca/vim-ref'
+  NeoBundle 'SQLUtilities'
+  NeoBundle 'vim-ruby/vim-ruby'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'Pydiction'
+  NeoBundle 'taglist.vim'
+  NeoBundle 'SrcExpl'
+  NeoBundle 'errormarker.vim'
+  NeoBundle 'ujihisa/ref-hoogle'
+  NeoBundle "osyo-manga/shabadou.vim"
+  NeoBundleLazy 'osyo-manga/vim-watchdogs',  { 'depends' : [
+        \   'thinca/vim-quickrun',
+        \   'Shougo/vimproc.vim',
+        \   'osyo-manga/shabadou.vim',
+        \   'jceb/vim-hier',
+        \   'dannyob/quickfixstatus'
+        \ ] }
+
+  NeoBundleLazy 'vim-scripts/javacomplete',  {
+        \   'build': {
+        \     'cygwin': 'javac autoload/Reflection.java',
+        \     'mac': 'javac autoload/Reflection.java',
+        \     'unix': 'javac autoload/Reflection.java'
+        \   },
+        \ }
+
+  "GoLang
+  "http://d.hatena.ne.jp/sasaplus1/20120708/1341720437
+"  NeoBundle 'go', {'type' : 'nosync'}
+"  NeoBundle 'gocode', {'type' : 'nosync'}
+"}
+
+" Syntax {
+  NeoBundle 'haml.zip'
+  NeoBundle 'JavaScript-syntax'
+"  NeoBundle 'jQuery'
+"  NeoBundle 'nginx.vim'
+  NeoBundle 'tpope/vim-markdown'
+"  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'yuroyoro/vim-python'
+  NeoBundle 'yuroyoro/vim-scala'
+"  NeoBundle 'jondistad/vimclojure'
+  NeoBundle 'eagletmt/ghcmod-vim'
+  NeoBundle 'kana/vim-filetype-haskell'
+  NeoBundle 'scrooloose/syntastic'
+"}
+
+" Buffer {
+  NeoBundle 'DumbBuf'
+  NeoBundle 'minibufexpl.vim'
+  NeoBundle 'The-NERD-tree'
+  NeoBundle 'vtreeexplorer'
+"}
+
+" Encording {
+  NeoBundle 'banyan/recognize_charcode.vim'
+"}
+
+" Utility {
+  NeoBundle 'Shougo/vimshell.git'
+  NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+  NeoBundle 'AndrewRadev/switch.vim'
+  NeoBundle 'vim-scripts/sudo.vim'
+"  NeoBundle 'tyru/vim-altercmd'
+"  NeoBundle 'mattn/webapi-vim'
+"  NeoBundle 'cecutil'
+"  NeoBundle 'tyru/urilib.vim'
+"  NeoBundle 'L9'
+  NeoBundle 'thinca/vim-openbuf'
+"  NeoBundle 'tsukkee/lingr-vim'
+"  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'itchyny/lightline.vim'
+"  NeoBundle 'mattn/vim-metarw-redmine'
+"  NeoBundle 'kana/vim-metarw'
+"  NeoBundle 'airblade/vim-gitgutter'
+"  NeoBundle 'motemen/git-vim'
+"  NeoBundle 'kien/ctrlp.vim'
+"}
+
+" ColorSchema {{{
+  NeoBundle 'desert256.vim'
+  NeoBundle 'mrkn256.vim'
+  NeoBundle 'tomasr/molokai'
+  NeoBundle 'yuroyoro/yuroyoro256.vim'
+  NeoBundle 'flazz/vim-colorschemes'
+"}}}
+
+" Unite {{{
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'tsukkee/unite-help'
+  NeoBundle 'h1mesuke/unite-outline'
+"  NeoBundle 'Sixeight/unite-grep'
+  NeoBundle 'basyura/unite-rails'
+  NeoBundle 'thinca/vim-unite-history'
+  NeoBundle 'tsukkee/unite-tag'
+  NeoBundle 'choplin/unite-vim_hacks'
+  NeoBundle 'ujihisa/unite-haskellimport'
+  NeoBundle "osyo-manga/unite-quickfix"
+  NeoBundle 'Shougo/neomru.vim'
+"}}}
+
+filetype plugin indent on
+
+NeoBundleCheck
