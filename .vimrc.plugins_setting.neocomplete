@@ -1,6 +1,9 @@
 "
 " neocomplete.vim
 "
+
+if neobundle#tap('neocomplete.vim') " {{{
+
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length = 3
@@ -118,3 +121,5 @@ let g:rsenseUseOmniFunc = 1
 let g:rsenseHome = expand('~/src/rsense-0.3')
 
 let g:neocomplete#omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+endif " }}}

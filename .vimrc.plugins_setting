@@ -103,20 +103,21 @@ let dumbbuf_remove_marked_when_close = 1
 "------------------------------------
 " vim-indent-guides
 "------------------------------------
-nnoremap <silent> <Space>id :<C-u>IndentGuidesToggle<Enter>
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_start_level = 4
-let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-if 'dark' == &background
-    hi IndentGuidesOdd  ctermbg=black
-    hi IndentGuidesEven ctermbg=darkgrey
-else
-    hi IndentGuidesOdd  ctermbg=white
-    hi IndentGuidesEven ctermbg=lightgrey
-endif
-
+if neobundle#tap('vim-indent-guides.vim') " {{{
+  nnoremap <silent> <Space>id :<C-u>IndentGuidesToggle<Enter>
+  let g:indent_guides_auto_colors = 0
+  let g:indent_guides_start_level = 4
+  let g:indent_guides_guide_size = 1
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red ctermbg=3
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+  if 'dark' == &background
+      hi IndentGuidesOdd  ctermbg=black
+      hi IndentGuidesEven ctermbg=darkgrey
+  else
+      hi IndentGuidesOdd  ctermbg=white
+      hi IndentGuidesEven ctermbg=lightgrey
+  endif
+endif " }}}
 
 "------------------------------------
 " smooth_scroll.vim
@@ -133,17 +134,19 @@ map  :call SmoothScroll("u",1, 1)<CR>
 " taglist.Vim
 "------------------------------------
 " 関数一覧
-set tags=tags
-let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Enable_Fold_Column = 1
-let Tlist_Auto_Open = 1
-let Tlist_Auto_Update = 1
-let Tlist_WinWidth = 40
-""map <silent><leader>l :Tlist<CR>
-nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
-map <F8> <ESC>:TlistToggle<CR>
-"nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+if neobundle#tap('taglist.vim')
+  set tags=tags
+  let Tlist_Show_One_File = 1
+  let Tlist_Exit_OnlyWindow = 1
+  let Tlist_Enable_Fold_Column = 1
+  let Tlist_Auto_Open = 1
+  let Tlist_Auto_Update = 1
+  let Tlist_WinWidth = 40
+"  map <silent><leader>l :Tlist<CR>
+  nmap <F7> :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+  map <F8> <ESC>:TlistToggle<CR>
+"  nmap <Leader>tl :CMiniBufExplorer<CR>:TrinityToggleTagList<CR>:TMiniBufExplorer<CR>
+endif " }}}
 
 "------------------------------------
 " Srcexp
@@ -220,11 +223,21 @@ let g:syntastic_auto_loc_list=1
 "------------------------------------
 " toggle.vim
 "------------------------------------
-imap <C-A> <Plug>ToggleI
-nmap <C-A> <Plug>ToggleN
-vmap <C-A> <Plug>ToggleV
+if neobundle#tap('toggle.vim') " {{{
+  imap <C-A> <Plug>ToggleI
+  nmap <C-A> <Plug>ToggleN
+  vmap <C-A> <Plug>ToggleV
 
-let g:toggle_pairs = {'true':'false', 'false':'true', 'and':'or', 'or':'and', 'if':'unless', 'unless':'if', 'yes':'no', 'no':'yes', 'enable':'disable', 'disable':'enable', 'pick':'reword', 'reword':'fixup', 'fixup':'squash', 'squash':'edit', 'edit':'exec', 'exec':'pick' }
+  let g:toggle_pairs = {
+        \ 'true':'false', 'false':'true',
+        \ 'and':'or', 'or':'and',
+        \ 'if':'unless', 'unless':'if',
+        \ 'yes':'no', 'no':'yes',
+        \ 'enable':'disable', 'disable':'enable',
+        \ 'pick':'reword', 'reword':'fixup',
+        \ 'fixup':'squash', 'squash':'edit',
+        \ 'edit':'exec', 'exec':'pick' }
+endif " }}}
 
 "------------------------------------
 " vimfiler
@@ -248,7 +261,7 @@ if neobundle#tap('vimfiler.vim') " {{{
   let g:unite_kind_file_use_trashbox = 1
   let g:vimfiler_as_default_explorer = 1
 
-  nnoremap <Space>e  :<C-u>VimFilerExplorer -winwidth=65<CR>
+  nnoremap <Space>e  :<C-u>VimFilerExplorer -winwidth=45<CR>
 endif " }}}
 
 "------------------------------------

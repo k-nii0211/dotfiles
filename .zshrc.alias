@@ -30,6 +30,7 @@ alias tml='tmux list-sessions'
 alias ga='git add .'
 alias gs='git status -s -b'
 alias gst="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
+alias gl="git log --pretty=oneline --decorate --graph"
 
 grepvim() {
     XFS=`grep -ERUInl $* | uniq | xargs`

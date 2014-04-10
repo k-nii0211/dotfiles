@@ -2,6 +2,9 @@
 " unite.vim
 "------------------------------------
 " The prefix key.
+
+if neobundle#tap('unite.vim') " {{{
+
 nnoremap [unite] <Nop>
 nmap <Space>f [unite]
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
@@ -45,3 +48,5 @@ let g:unite_source_file_mru_limit = 200
 " unite-plugins
 cnoremap UH Unite help<Enter>
 cnoremap UO Unite outline<Enter>
+
+endif " }}}

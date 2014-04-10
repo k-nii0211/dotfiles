@@ -6,6 +6,8 @@ function check_cmds {
     [ -z `which brew 2> /dev/null` ] && echo "no such brew" ;;
   linux*)
     [ -z `which yum 2> /dev/null` ] && echo "no such yum" ;;
+  cygwin*)
+    [ -z `which apt-cyg 2> /dev/null` ] && echo "no such apt-cyg" ;;
   *)
     echo "unknwon os type ${OSTYPE}"
     exit 1

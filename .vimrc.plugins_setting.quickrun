@@ -3,6 +3,9 @@
 " https://gist.github.com/5134267.git
 " http://d.hatena.ne.jp/osyo-manga/20120919/1348054752
 "
+
+if neobundle#tap('quickrun.vim') " {{{
+
 function! s:quickrun_config()
   return unite#sources#quickrun_config#quickrun_config_all()
 endfunction
@@ -1535,5 +1538,7 @@ command! -nargs=* -range=0 -complete=customlist,quickrun#complete
 
 
 let g:unite_quickfix_is_multiline=0
+
+endif " }}}
 
 " vim:set foldmethod=marker:
