@@ -2,6 +2,7 @@
 
 source ~/dotfiles/func
 check_cmds
+setup_oh_my_zsh
 
 for item in `cat dotfiles.lst`; do
     if [ -f ~/$item  -a ! -h ~/$item ]; then
@@ -11,7 +12,6 @@ for item in `cat dotfiles.lst`; do
     ln -s ~/dotfiles/$item ~ 2> /dev/null
 done
 
-setup_oh_my_zsh
 setup_rbenv
 setup_pip
 setup_neobundle
