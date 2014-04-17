@@ -1,0 +1,1 @@
+git status -s | awk '/^ D/{print git checkout }'

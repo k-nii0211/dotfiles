@@ -123,6 +123,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'eagletmt/ghcmod-vim'
   NeoBundle 'kana/vim-filetype-haskell'
   NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'chaquotay/ftl-vim-syntax'
 "}
 
 " Buffer {
@@ -155,7 +156,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "  NeoBundle 'L9'
   NeoBundle 'thinca/vim-openbuf'
 "  NeoBundle 'tsukkee/lingr-vim'
-"  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'vcscommand.vim'
   NeoBundle 'itchyny/lightline.vim'
 "  NeoBundle 'mattn/vim-metarw-redmine'
 "  NeoBundle 'kana/vim-metarw'
