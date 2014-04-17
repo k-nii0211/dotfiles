@@ -206,7 +206,7 @@ xmap <silent> ie <Plug>CamelCaseMotion_ie
 "------------------------------------
 " disable default shortcut mapping and re-define to <Leader>ec
 let g:errormarker_disablemappings = 1
-nmap <silent> <unique> <Leader>ec :ErrorAtCursor<CR>
+noremap <silent> <Leader>eac :ErrorAtCursor<CR>
 
 "------------------------------------
 " Pydiction
@@ -265,6 +265,49 @@ if neobundle#tap('vimfiler.vim') " {{{
 endif " }}}
 
 "------------------------------------
+" w3m
+"------------------------------------
+if neobundle#tap('w3m.vim') " {{{
+
+  call neobundle#config({
+        \   'autoload' : {
+        \     'commands' : [
+        \       'W3m',
+        \       'W3mTab',
+        \       'W3mSplit',
+        \       'W3mVSplit',
+        \       'W3mClose',
+        \       'W3mCopyUrl',
+        \       'W3mReload',
+        \       'W3mAddressBar',
+        \       'W3mShowExternal',
+        \       'W3mSyntaxOff',
+        \       'W3mSyntaxOn',
+        \       'W3mSetUserAgent',
+        \       'W3mHistory',
+        \       'W3mHistoryClear'
+        \     ],
+        \   }
+        \ })
+
+  function! neobundle#tapped.hooks.on_source(bundle)
+    highlight! link w3mLink      Function
+    highlight! link w3mLinkHover SpecialKey
+    highlight! link w3mSubmit    Special
+    highlight! link w3mInput     String
+    highlight! link w3mBold      Comment
+    highlight! link w3mUnderline Underlined
+    highlight! link w3mHitAHint  Question
+    highlight! link w3mAnchor    Label
+  endfunction
+
+  let g:w3m#hit_a_hint_key = 'f'
+  let g:w3m#lang = 'ja_JP'
+
+endif
+" }}}
+
+"------------------------------------
 " GoLang gocde
 "------------------------------------
 "set completeopt=menu,preview
@@ -274,3 +317,4 @@ source ~/dotfiles/.vimrc.plugins_setting.quickrun
 source ~/dotfiles/.vimrc.plugins_setting.unite
 source ~/dotfiles/.vimrc.plugins_setting.vimshell
 source ~/dotfiles/.vimrc.plugins_setting.vcscommand
+source ~/dotfiles/.vimrc.plugins_setting.automatic

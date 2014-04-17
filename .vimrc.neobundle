@@ -14,7 +14,7 @@ endif
 call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"{
+" {{{
   NeoBundle 'scrooloose/nerdcommenter.git'
 "  NeoBundle 'c9s/cascading.vim'
 "  NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -45,9 +45,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "  NeoBundle 'textobj-jabraces'
    NeoBundle 'taku-o/vim-toggle'
    NeoBundleLazy 'Shougo/vimfiler.vim', { 'depends' : [ 'Shougo/unite.vim' ] }
-"}
+" }}}
 
-" complcache {
+" complcache {{{
 "  NeoBundle 'Shougo/neocomplcache'
 "  NeoBundleLazy 'Shougo/neocomplcache-rsense'
   NeoBundle 'Shougo/neocomplete'
@@ -58,9 +58,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "  NeoBundle 'honza/snipmate-snippets'
 "  NeoBundle 'm2ym/rsense'
 "  NeoBundle 'taichouchou2/vim-rsense'
-"}
+" }}}
 
-" Searching/Moving {
+" Searching/Moving {{{
 "  NeoBundle 'Smooth-Scroll'
   NeoBundle 'yuroyoro/smooth_scroll.vim'
   NeoBundle 'smartword'
@@ -72,9 +72,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 "  http://blog.glidenote.com/blog/2013/02/28/the-silver-searcher-better-than-ack/
 "  NeoBundle 'rking/ag.vim'
-"}
+" }}}
 
-" Programming {
+" Programming {{{
   NeoBundleLazy 'thinca/vim-quickrun'
   NeoBundleLazy 'thinca/vim-ref'
   NeoBundleLazy 'thinca/vim-qfreplace'
@@ -108,9 +108,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   "http://d.hatena.ne.jp/sasaplus1/20120708/1341720437
 "  NeoBundle 'go', {'type' : 'nosync'}
 "  NeoBundle 'gocode', {'type' : 'nosync'}
-"}
+" }}}
 
-" Syntax {
+" Syntax {{{
   NeoBundle 'haml.zip'
   NeoBundle 'JavaScript-syntax'
 "  NeoBundle 'jQuery'
@@ -124,18 +124,18 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'kana/vim-filetype-haskell'
   NeoBundle 'scrooloose/syntastic'
   NeoBundle 'chaquotay/ftl-vim-syntax'
-"}
+" }}}
 
-" Buffer {
+" Buffer {{{
   NeoBundle 'DumbBuf'
   NeoBundle 'minibufexpl.vim'
   NeoBundle 'The-NERD-tree'
   NeoBundle 'vtreeexplorer'
-"}
+" }}}
 
-" Encording {
+" Encording {{{
   NeoBundle 'banyan/recognize_charcode.vim'
-"}
+" }}}
 
 " Utility {{{
   NeoBundleLazy 'Shougo/vimshell.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
@@ -149,6 +149,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
       \ }
   NeoBundle 'AndrewRadev/switch.vim'
   NeoBundle 'vim-scripts/sudo.vim'
+  NeoBundle 'osyo-manga/vim-automatic'
 "  NeoBundle 'tyru/vim-altercmd'
 "  NeoBundle 'mattn/webapi-vim'
 "  NeoBundle 'cecutil'
@@ -156,6 +157,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "  NeoBundle 'L9'
   NeoBundle 'thinca/vim-openbuf'
 "  NeoBundle 'tsukkee/lingr-vim'
+  NeoBundle 'yuratomo/w3m.vim'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'vcscommand.vim'
   NeoBundle 'itchyny/lightline.vim'
@@ -181,7 +183,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'zazen'
   NeoBundle 'jonathanfilip/vim-lucius'
   NeoBundle 'jpo/vim-railscasts-theme'
-"}}}
+" }}}
 
 " Unite {{{
   NeoBundleLazy 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
@@ -197,7 +199,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundleLazy 'Shougo/unite-ssh', { 'depends' : [ 'Shougo/unite.vim' ] }
   NeoBundleLazy 'Shougo/unite-help', { 'depends' : [ 'Shougo/unite.vim' ] }
   NeoBundleLazy 'Shougo/unite-outline', { 'depends' : [ 'Shougo/unite.vim' ] }
-"}}}
+" }}}
 
 filetype plugin indent on
 
