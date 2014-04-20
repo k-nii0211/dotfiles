@@ -20,7 +20,7 @@ alias lf='ls -F'
 alias ll='ls -l'
 alias lla='ls -la'
 
-alias 'pua\?'='pgrep -l -f'
+alias 'ps\?'='pgrep -l -f'
 
 alias du='du -h'
 alias df='df -h'
@@ -54,6 +54,15 @@ grepvim() {
     fi
 }
 alias grv='grepvim'
+
+ssh_config() {
+    tmp_fifo=$(mktemp -u /tmp/`basename $0`.XXXXXX)
+    mkfifo ${tmp_fifo}
+    cat ~/.ssh/config ~/.ssh/config.d/* > ${tmp_fifo} 2> /dev/null &
+    /usr/bin/ssh -F "$tmp_fifo" "$@"
+    rm -f ${tmp_fifo}
+}
+alias ssh='ssh_config'
 
 # unalias oh-my-zsh plugin extract alias
 unalias x
