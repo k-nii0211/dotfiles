@@ -11,7 +11,7 @@ linux*)
   ;;
 esac
 
-[ -z `which htop 2> /dev/null` ] && alias top='htop'
+[ `which htop 2> /dev/null` ] && alias top='htop'
 
 alias v='vim'
 
