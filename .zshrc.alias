@@ -7,9 +7,11 @@ freebsd*|darwin*)
   alias ls='ls -aG'
   ;;
 linux*)
-  alias la='ls -al'
+  alias ls='ls -al'
   ;;
 esac
+
+[ -z `which htop 2> /dev/null` ] && alias top='htop'
 
 alias v='vim'
 
@@ -18,7 +20,7 @@ alias lf='ls -F'
 alias ll='ls -l'
 alias lla='ls -la'
 
-alias 'ps?'='pgrep -l -f'
+alias 'pua\?'='pgrep -l -f'
 
 alias du='du -h'
 alias df='df -h'

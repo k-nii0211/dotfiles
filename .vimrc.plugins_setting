@@ -9,6 +9,31 @@
 nmap ,y ;YRShow<CR>
 
 "------------------------------------
+" vim-easymotion
+"------------------------------------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case sensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-lineforward)
+map <Leader>l <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+"------------------------------------
 " MiniBufExplorer
 "------------------------------------
 let g:miniBufExplMapWindowNavVim=1
@@ -38,7 +63,7 @@ let g:treeExplVertical=1
 " コメントの間にスペースを空ける
 let NERDSpaceDelims = 1
 "<Leader>xでコメントをトグル(NERD_commenter.vim)
-map <Leader>x, c<space>
+map <leader>x, c<space>
 ""未対応ファイルタイプのエラーメッセージを表示しない
 let NERDShutUp=1
 
@@ -79,11 +104,11 @@ nnoremap <leader>l<Space> :BufExplorer<CR>
 "------------------------------------
 " VTreeExplorer
 "------------------------------------
-let g:treeExplVertical=1
+"let g:treeExplVertical=1
 "<Leader>t<Space>でディレクトリツリー表示
-noremap <Leader>t<Space> :VSTreeExplore<CR>
+"noremap <leader>t<Space> :VSTreeExplore<CR>
 "分割したウィンドウのサイズ
-let g:treeExplWinSize=30
+"let g:treeExplWinSize=30
 
 "------------------------------------
 " DumbBuf.vim
@@ -175,10 +200,10 @@ map R <Plug>(operator-replace)
 "------------------------------------
 " sumartword.vim
 "------------------------------------
-noremap ,w  w
-noremap ,b  b
-noremap ,e  e
-noremap ,ge  ge
+"noremap ,w  w
+"noremap ,b  b
+"noremap ,e  e
+"noremap ,ge  ge
 
 map W  <Plug>(smartword-w)
 map B  <Plug>(smartword-b)
@@ -216,9 +241,20 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 "------------------------------------
 " Syntastic
 "------------------------------------
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_highlighting = 1
-let g:syntastic_auto_loc_list=1
+if neobundle#tap('syntastic')
+  let g:syntastic_enable_signs = 1
+  let g:syntastic_enable_highlighting = 1
+  let g:syntastic_auto_loc_list=1
+endif
+
+"------------------------------------
+" Gundo
+"------------------------------------
+nnoremap <F5> :GundoToggle<CR>
+"let g:gundo_width = 60
+"let g:gundo_preview_height = 40
+"let g:gundo_preview_height = 40
+"let g:gundo_right = 1
 
 "------------------------------------
 " toggle.vim

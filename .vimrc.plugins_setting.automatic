@@ -1,6 +1,7 @@
 "
 " vim-automatic
 "  special thanks @supermomonga
+"    http://blog.supermomonga.com/articles/vim/automatic.html
 "
 if neobundle#tap('vim-automatic') " {{{
 
@@ -24,7 +25,7 @@ if neobundle#tap('vim-automatic') " {{{
         \   'is_open_other_window' : 1,
         \ }
   let g:automatic_default_set_config = {
-        \   'height' : '60%',
+        \   'height' : '50%',
         \   'move' : 'bottom',
         \   'apply' : function('s:my_temporary_window_init')
         \ }
@@ -42,6 +43,13 @@ if neobundle#tap('vim-automatic') " {{{
         \   {
         \     'match' : { 'bufname' : '^vimfiler' },
         \     'set' : { 'unsettings' : [ 'resize' ], 'move' : 'left'}
+        \   },
+        \   {
+        \     'match' : { 'bufname' : '\[__Gundo__ __Gundo_Preview__\]' },
+        \     'set' : {
+        \       'height' : '50%',
+        \       'move' : 'right'
+        \     }
         \   },
         \   {
         \     'match' : { 'bufname' : '^w3m-.+"' },
@@ -76,7 +84,7 @@ if neobundle#tap('vim-automatic') " {{{
         \       'bufname' : '\[quickrun output\]',
         \     },
         \     'set' : {
-        \       'height' : 8,
+        \       'height' : '8',
         \     }
         \   },
         \   {

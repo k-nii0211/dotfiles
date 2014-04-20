@@ -68,6 +68,16 @@ function setup_neobundle {
     echo "install neobundle.vim"
     mkdir -p ~/.vim/bundle
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-    vim -c ':NeoBundleInstall'
   fi
+
+  # neobundle install
+  vim -N -u NONE -i NONE -V1 -e -s \
+    --cmd 'source ~/.vimrc' \
+    --cmd 'try
+             NeoBundleInstall!
+           catch
+             qall!
+           endtry' \
+    --cmd qall!
+  echo ""
 }

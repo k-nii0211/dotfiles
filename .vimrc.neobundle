@@ -16,13 +16,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " {{{
   NeoBundle 'scrooloose/nerdcommenter.git'
-"  NeoBundle 'c9s/cascading.vim'
+  NeoBundle 'c9s/cascading.vim'
 "  NeoBundle 'nathanaelkane/vim-indent-guides'
   NeoBundle 'xmledit'
   NeoBundle 'Align'
 "  NeoBundle 'h1mesuke/vim-alignta'
 "  NeoBundle 'godlygeek/tabular'
-"  NeoBundle 'Gundo'
+  NeoBundle 'Gundo'
   NeoBundle 'anyakichi/vim-surround'
 "  NeoBundle 'smartchr'
 "  NeoBundle 'operator-user'
@@ -44,15 +44,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "  NeoBundle 'textobj-rubyblock'
 "  NeoBundle 'textobj-jabraces'
    NeoBundle 'taku-o/vim-toggle'
-   NeoBundleLazy 'Shougo/vimfiler.vim', { 'depends' : [ 'Shougo/unite.vim' ] }
+   NeoBundle 'Shougo/vimfiler.vim', { 'depends' : [ 'Shougo/unite.vim' ] }
 " }}}
 
 " complcache {{{
 "  NeoBundle 'Shougo/neocomplcache'
-"  NeoBundleLazy 'Shougo/neocomplcache-rsense'
+"  NeoBundle 'Shougo/neocomplcache-rsense'
   NeoBundle 'Shougo/neocomplete'
-  NeoBundleLazy 'Shougo/neosnippet.vim'
-  NeoBundleLazy 'Shougo/neosnippet-snippets', { 'depends' : [ 'Shougo/neosnippet.vim' ] }
+  NeoBundle 'Shougo/neosnippet.vim'
+  NeoBundle 'Shougo/neosnippet-snippets', { 'depends' : [ 'Shougo/neosnippet.vim' ] }
   NeoBundle 'Shougo/neobundle-vim-scripts'
   NeoBundle 'ujihisa/neco-ghc'
 "  NeoBundle 'honza/snipmate-snippets'
@@ -65,7 +65,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'yuroyoro/smooth_scroll.vim'
   NeoBundle 'smartword'
   NeoBundle 'camelcasemotion'
-  NeoBundle 'EasyMotion'
+"  NeoBundle 'EasyMotion'
+  NeoBundle 'Lokaltog/vim-easymotion'
   NeoBundle 'matchit.zip'
   NeoBundle 'grep.vim'
   NeoBundle 'eregex.vim'
@@ -76,9 +77,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Programming {{{
   NeoBundle 'thinca/vim-quickrun'
-  NeoBundleLazy 'thinca/vim-ref'
-  NeoBundleLazy 'thinca/vim-qfreplace'
-  NeoBundleLazy 'thinca/vim-editvar'
+  NeoBundle 'thinca/vim-ref'
+  NeoBundle 'thinca/vim-qfreplace'
+  NeoBundle 'thinca/vim-editvar'
   NeoBundle 'SQLUtilities'
   NeoBundle 'vim-ruby/vim-ruby'
   NeoBundle 'tpope/vim-rails'
@@ -88,7 +89,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'errormarker.vim'
   NeoBundle 'ujihisa/ref-hoogle'
   NeoBundle "osyo-manga/shabadou.vim"
-  NeoBundleLazy 'osyo-manga/vim-watchdogs',  { 'depends' : [
+  NeoBundle 'osyo-manga/vim-watchdogs',  { 'depends' : [
         \   'thinca/vim-quickrun',
         \   'Shougo/vimproc.vim',
         \   'osyo-manga/shabadou.vim',
@@ -96,7 +97,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
         \   'dannyob/quickfixstatus'
         \ ] }
 
-  NeoBundleLazy 'vim-scripts/javacomplete',  {
+  NeoBundle 'vim-scripts/javacomplete',  {
         \   'build': {
         \     'cygwin': 'javac autoload/Reflection.java',
         \     'mac': 'javac autoload/Reflection.java',
@@ -138,7 +139,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 
 " Utility {{{
-  NeoBundleLazy 'Shougo/vimshell.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
+  NeoBundle 'Shougo/vimshell.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
   NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -186,19 +187,19 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 
 " Unite {{{
-  NeoBundleLazy 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
+  NeoBundle 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
 "  NeoBundle 'Sixeight/unite-grep'
   NeoBundle 'basyura/unite-rails'
   NeoBundle 'thinca/vim-unite-history'
   NeoBundle 'tsukkee/unite-tag'
   NeoBundle 'choplin/unite-vim_hacks'
   NeoBundle 'ujihisa/unite-haskellimport'
-  NeoBundleLazy 'ujihisa/unite-locate',  { 'depends' : [ 'Shougo/unite.vim' ] }
-  NeoBundleLazy 'osyo-manga/unite-quickfix',  { 'depends' : [ 'Shougo/unite.vim' ] }
+  NeoBundle 'ujihisa/unite-locate',  { 'depends' : [ 'Shougo/unite.vim' ] }
+  NeoBundle 'osyo-manga/unite-quickfix',  { 'depends' : [ 'Shougo/unite.vim' ] }
   NeoBundle 'Shougo/neomru.vim', { 'depends' : [ 'Shougo/unite.vim' ] }
-  NeoBundleLazy 'Shougo/unite-ssh', { 'depends' : [ 'Shougo/unite.vim' ] }
-  NeoBundleLazy 'Shougo/unite-help', { 'depends' : [ 'Shougo/unite.vim' ] }
-  NeoBundleLazy 'Shougo/unite-outline', { 'depends' : [ 'Shougo/unite.vim' ] }
+  NeoBundle 'Shougo/unite-ssh', { 'depends' : [ 'Shougo/unite.vim' ] }
+  NeoBundle 'Shougo/unite-help', { 'depends' : [ 'Shougo/unite.vim' ] }
+  NeoBundle 'Shougo/unite-outline', { 'depends' : [ 'Shougo/unite.vim' ] }
 " }}}
 
 filetype plugin indent on

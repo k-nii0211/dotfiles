@@ -6,7 +6,7 @@
 if neobundle#tap('unite.vim') " {{{
 
 nnoremap [unite] <Nop>
-nmap <Space>f [unite]
+nmap <leader>f [unite]
 nnoremap [unite]u  :<C-u>Unite -no-split<Space>
 nnoremap <silent> [unite]a  :<C-u>UniteWithCurrentDir -no-split -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]f  :<C-u>Unite -no-split -buffer-name=files file<CR>

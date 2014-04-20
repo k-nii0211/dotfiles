@@ -19,8 +19,6 @@ set viminfo='50,<1000,s100,\"50
 set modelines=0
 set notitle
 
-"set clipboard+=unnamed
-
 set mouse=a
 set guioptions+=a
 set ttymouse=xterm2
@@ -32,5 +30,13 @@ command! Ev edit $MYVIMRC
 command! Rv source $MYVIMRC
 
 set helpfile=$VIMRUNTIME/doc/help.txt
+
+nnoremap qq: <Esc>q:
+nnoremap qq/ <Esc>q/
+nnoremap qq? <Esc>q?
+
+nnoremap q: <NOP>
+nnoremap q/ <NOP>
+nnoremap q? <NOP>
 
 filetype plugin on

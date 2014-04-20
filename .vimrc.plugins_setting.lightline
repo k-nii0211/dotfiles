@@ -1,7 +1,7 @@
 "
 " lightline
 "   special thanks @itchyny
-"     https://github.com/itchyny/lightline.vim
+"     http://d.hatena.ne.jp/itchyny/20130918/1379461406
 "     http://d.hatena.ne.jp/itchyny/20130824/1377351527
 "
 
@@ -13,7 +13,16 @@ let g:lightline = {
       \ 'colorscheme': 'landscape', 
       \ 'mode_map': { 'c': 'NORMAL' }, 
       \ 'active': {
-      \   'left': [ [ 'mode',  'paste' ],  [ 'fugitive',  'filename' ] ]
+      \   'left': [ [ 'mode',  'paste' ],  [ 'fugitive',  'filename' ] ], 
+      \   'right': [ [ 'syntastic',  'lineinfo' ], 
+      \              [ 'percent' ], 
+      \              [ 'fileformat',  'fileencoding',  'filetype' ] ]
+      \ }, 
+      \ 'component_expand': {
+      \   'syntastic': 'SyntasticStatuslineFlag', 
+      \ }, 
+      \ 'component_type': {
+      \   'syntastic': 'error', 
       \ }, 
       \ 'component_function': {
       \   'modified': 'MyModified', 
@@ -26,8 +35,18 @@ let g:lightline = {
       \   'mode': 'MyMode', 
       \ }, 
       \ 'separator': { 'left': '⮀',  'right': '⮂' }, 
-      \ 'subseparator': { 'left': '⮁',  'right': '⮃' }
+      \ 'subseparator': { 'left': '⮁',  'right': '⮃' }, 
       \ }
+
+let g:syntastic_mode_map = { 'mode': 'passive' }
+augroup AutoSyntastic
+  autocmd!
+  autocmd BufWritePost *.sh,*.c,*.cpp,*.rb,*.py call s:syntastic()
+augroup END
+function! s:syntastic()
+  SyntasticCheck
+  call lightline#update()
+endfunction
 
 function! MyModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
