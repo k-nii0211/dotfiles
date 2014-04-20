@@ -2,6 +2,7 @@
 .vimrc
 .zsh
 .zshrc
+.dir_colors
 .tmux.conf
 .gitconfig
 .gitignore_global

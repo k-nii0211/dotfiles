@@ -28,7 +28,6 @@ function check_cmds {
           exit 1
       fi
   done
-
 }
 
 function setup_oh_my_zsh {
@@ -39,7 +38,12 @@ function setup_oh_my_zsh {
 }
 
 function setup_rbenv {
-  local rc_file="~/.bash_profile"
+  if [ x`basename ${SHELL}` == x"zsh" ]; then
+    local rc_file="~/.zshrc.local"
+  else
+    echo '$SHELL is not zsh. set rc_file=~/.bash_profile'
+    local rc_file="~/.bash_profile"
+  fi
   if [ -z `which rbenv 2> /dev/null` ]; then
     echo "install rbenv"
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv/

@@ -75,7 +75,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 
 " Programming {{{
-  NeoBundleLazy 'thinca/vim-quickrun'
+  NeoBundle 'thinca/vim-quickrun'
   NeoBundleLazy 'thinca/vim-ref'
   NeoBundleLazy 'thinca/vim-qfreplace'
   NeoBundleLazy 'thinca/vim-editvar'

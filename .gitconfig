@@ -14,4 +14,6 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [diff]
-	tool = vimdiff
+  external = ~/dotfiles/bin/vim_diff_wrapper
+[pager]
+  diff =

@@ -1,4 +1,6 @@
+"
 " Inspired by ujihisa's vimrc
+"
 function! s:GitLogViewer()
   " vnewだとコミットメッセージが切れてしまうのでnew
   new
@@ -9,6 +11,7 @@ function! s:GitLogViewer()
   setlocal foldtext=FoldTextOfGitLog()
 endfunction
 command! GitLogViewer call s:GitLogViewer()
+nnoremap <leader>glv :GitLogViewer<CR>
 
 " git log表示時の折りたたみ用
 function! FoldTextOfGitLog()

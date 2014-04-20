@@ -6,7 +6,7 @@
 "
 if neobundle#tap('vcscommand.vim') " {{{
   nnoremap [VCS] <Nop>
-  nmap <Leader>v [VCS]
+  nmap <leader>v [VCS]
   let g:VCSCommandMapPrefix = '[VCS]'
 
   augroup VCSCommand

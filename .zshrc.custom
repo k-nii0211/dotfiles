@@ -262,7 +262,7 @@ setopt hist_no_store
 setopt path_dirs
 
 # 戻り値が 0 以外の場合終了コードを表示する
-# setopt print_exit_value
+setopt print_exit_value
 
 # pushd を引数なしで実行した場合 pushd $HOME と見なされる
 #setopt pushd_to_home
@@ -284,12 +284,12 @@ setopt path_dirs
 
 # ^でcd ..する
 function cdup() {
-echo
-cd ..
-zle reset-prompt
+  echo
+  cd ..
+  zle reset-prompt
 }
 zle -N cdup
-# bindkey '\^' cdup
+#bindkey '\^' cdup
 
 function current_branch() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -358,12 +358,10 @@ setopt complete_aliases     # aliased ls needs if file/dir completions work
 
 case "${OSTYPE}" in
 freebsd*|darwin*)
-  alias ls="ls -alG"
   zle -N expand_to_home_or_insert
   bindkey "@" expand_to_home_or_insert
   ;;
 linux*)
-  alias la="ls -al"
   ;;
 esac
 

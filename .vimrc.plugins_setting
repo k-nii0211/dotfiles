@@ -314,6 +314,7 @@ endif
 
 source ~/dotfiles/.vimrc.plugins_setting.neocomplete
 source ~/dotfiles/.vimrc.plugins_setting.quickrun
+source ~/dotfiles/.vimrc.plugins_setting.lightline
 source ~/dotfiles/.vimrc.plugins_setting.unite
 source ~/dotfiles/.vimrc.plugins_setting.vimshell
 source ~/dotfiles/.vimrc.plugins_setting.vcscommand

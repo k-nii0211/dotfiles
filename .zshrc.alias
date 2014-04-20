@@ -1,18 +1,30 @@
 #
 # alias
 #
-alias la="ls -a"
-alias lf="ls -F"
-alias ll="ls -l"
+
+case "${OSTYPE}" in
+freebsd*|darwin*)
+  alias ls='ls -aG'
+  ;;
+linux*)
+  alias la='ls -al'
+  ;;
+esac
+
+alias v='vim'
+
+alias la='ls -a'
+alias lf='ls -F'
+alias ll='ls -l'
 alias lla='ls -la'
 
 alias 'ps?'='pgrep -l -f'
 
-alias du="du -h"
-alias df="df -h"
-alias duh="du -h ./ --max-depth=1"
+alias du='du -h'
+alias df='df -h'
+alias duh='du -h ./ --max-depth=1'
 
-alias su="su -l"
+alias su='su -l'
 
 alias less='less -r'
 
@@ -28,9 +40,10 @@ alias tml='tmux list-sessions'
 
 # git
 alias ga='git add .'
+alias gc='git commit -am'
 alias gs='git status -s -b'
-alias gst="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset' --abbrev-commit --date=relative"
+alias gst='git log --date=short --max-count=1 --pretty=format:"%Cgreen%h %cd %Cblue%cn%x09%Creset%s" | tail -1 && echo "" && git status -s -b'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative'
 
 grepvim() {
     XFS=`grep -ERUInl $* | uniq | xargs`
