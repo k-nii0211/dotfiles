@@ -44,8 +44,12 @@ alias tml='tmux list-sessions'
 alias ga='git add .'
 alias gc='git commit -am'
 alias gs='git status -s -b'
+alias gls='git ls-files'
+alias gshow='git show'
+alias ggrep='git grep --line-number --show-function --color --heading --break'
 alias gst='git log --date=short --max-count=1 --pretty=format:"%Cgreen%h %cd %Cblue%cn%x09%Creset%s" | tail -1 && echo "" && git status -s -b'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative'
+alias glp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative --patch'
 
 grepvim() {
     XFS=`grep -ERUInl $* | uniq | xargs`

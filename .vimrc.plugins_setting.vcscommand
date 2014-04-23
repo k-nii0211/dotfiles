@@ -4,7 +4,8 @@
 "     https://gist.github.com/yoshikaw/5722617#file-vcscommand_customize-vim
 "     http://yskwkzhr.blogspot.jp/2013/06/vcscommandvim.html
 "
-if neobundle#tap('vcscommand.vim') " {{{
+if neobundle#tap('vcscommand.vim')
+
   nnoremap [VCS] <Nop>
   nmap <leader>v [VCS]
   let g:VCSCommandMapPrefix = '[VCS]'
@@ -154,4 +155,5 @@ if neobundle#tap('vcscommand.vim') " {{{
     endif
     return option
   endfunction "}}}
+
 endif

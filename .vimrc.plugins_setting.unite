@@ -1,9 +1,8 @@
-"------------------------------------
+"
 " unite.vim
-"------------------------------------
-" The prefix key.
+"
 
-if neobundle#tap('unite.vim') " {{{
+if neobundle#tap('unite.vim')
 
 nnoremap [unite] <Nop>
 nmap <leader>f [unite]
@@ -45,8 +44,9 @@ endfunction
 let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_limit = 200
 
-" unite-plugins
+" unite-plugins {{{
 cnoremap UH Unite help<Enter>
 cnoremap UO Unite outline<Enter>
+" }}}
 
-endif " }}}
+endif

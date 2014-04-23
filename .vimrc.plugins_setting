@@ -125,10 +125,8 @@ let dumbbuf_updatetime  = 1    " &updatetimeの最小値
 let dumbbuf_wrap_cursor = 0
 let dumbbuf_remove_marked_when_close = 1
 
-"------------------------------------
-" vim-indent-guides
-"------------------------------------
-if neobundle#tap('vim-indent-guides.vim') " {{{
+" vim-indent-guides {{{
+if neobundle#tap('vim-indent-guides.vim')
   nnoremap <silent> <Space>id :<C-u>IndentGuidesToggle<Enter>
   let g:indent_guides_auto_colors = 0
   let g:indent_guides_start_level = 4
@@ -213,7 +211,6 @@ map ge  <Plug>(smartword-ge)
 "------------------------------------
 " camelcasemotion.vim
 "------------------------------------
-
 " <Shift-wbe>でCameCaseやsnake_case単位での単語移動
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
@@ -256,10 +253,8 @@ nnoremap <F5> :GundoToggle<CR>
 "let g:gundo_preview_height = 40
 "let g:gundo_right = 1
 
-"------------------------------------
-" toggle.vim
-"------------------------------------
-if neobundle#tap('toggle.vim') " {{{
+" toggle.vim {{{
+if neobundle#tap('toggle.vim')
   imap <C-A> <Plug>ToggleI
   nmap <C-A> <Plug>ToggleN
   vmap <C-A> <Plug>ToggleV
@@ -275,10 +270,8 @@ if neobundle#tap('toggle.vim') " {{{
         \ 'edit':'exec', 'exec':'pick' }
 endif " }}}
 
-"------------------------------------
-" vimfiler
-"------------------------------------
-if neobundle#tap('vimfiler.vim') " {{{
+" vimfiler {{{
+if neobundle#tap('vimfiler.vim')
   call neobundle#config({
         \ 'autoload' : {
         \   'commands' : [
@@ -300,10 +293,8 @@ if neobundle#tap('vimfiler.vim') " {{{
   nnoremap <Space>e  :<C-u>VimFilerExplorer -winwidth=45<CR>
 endif " }}}
 
-"------------------------------------
-" w3m
-"------------------------------------
-if neobundle#tap('w3m.vim') " {{{
+" w3m {{{
+if neobundle#tap('w3m.vim')
 
   call neobundle#config({
         \   'autoload' : {

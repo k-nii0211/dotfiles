@@ -4,7 +4,7 @@
 " http://d.hatena.ne.jp/osyo-manga/20120919/1348054752
 "
 
-if neobundle#tap('quickrun.vim') " {{{
+if neobundle#tap('quickrun.vim')
 
 function! s:quickrun_config()
   return unite#sources#quickrun_config#quickrun_config_all()
@@ -77,9 +77,7 @@ unlet s:runner
 
 " }}}
 
-
 " quickrun-outputter {{{
-
 " location-list {{{
 let s:outputter = quickrun#outputter#buffered#new()
 let s:outputter.name = "location_list"
@@ -117,7 +115,6 @@ endfunction
 call quickrun#module#register(s:outputter, 1)
 unlet s:outputter
 " }}}
-
 
 " quickfix {{{
 let s:outputter = quickrun#outputter#buffered#new()
@@ -161,7 +158,6 @@ endfunction
 call quickrun#module#register(s:outputter, 1)
 unlet s:outputter
 " }}}
-
 
 " quickfix_vim_script {{{
 let s:outputter = quickrun#outputter#buffered#new()
@@ -220,7 +216,6 @@ endfunction
 call quickrun#module#register(s:outputter, 1)
 unlet s:outputter
 " }}}
-
 
 " replace-region {{{
 let s:outputter = quickrun#outputter#buffered#new()
@@ -291,9 +286,6 @@ call quickrun#module#register(s:outputter, 1)
 unlet s:outputter
 " }}}
 
-
-
-
 " append {{{
 let s:outputter = {
 \  "name" : "append",
@@ -319,9 +311,7 @@ endfunction
 call quickrun#module#register(s:outputter, 1)
 unlet s:outputter
 " }}}
-
 " }}}
-
 
 " quickrun-hook {{{
 
@@ -331,13 +321,11 @@ function! s:make_hook_points_module(base)
 endfunction
 " }}}
 
-
 " quickrun-hook-make_hook_command {{{
 function! s:make_hook_command(base)
   return shabadou#make_hook_command(a:base)
 endfunction
 " }}}
-
 
 " quickrun-hook-close_location-list {{{
 let s:hook = s:make_hook_points_module({
@@ -362,7 +350,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-hook-clear_quickfix {{{
 let s:hook = s:make_hook_points_module({
 \  "name" : "clear_quickfix",
@@ -379,7 +366,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-hook-clear_quickfix {{{
 let s:hook = s:make_hook_points_module({
 \  "name" : "clear_location_list",
@@ -395,7 +381,6 @@ endfunction
 call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
-
 
 " quickrun-msvc_compiler {{{
 let s:hook = {
@@ -450,7 +435,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun_running {{{
 let s:hook = {
 \  "name" : "quickrun_running",
@@ -474,7 +458,6 @@ endfunction
 call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
-
 
 " quickrun-hook-banban {{{
 let s:hook = {
@@ -528,13 +511,11 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " make_quickrun_hook_anim {{{
 function! s:make_quickrun_hook_anim(name, aa_list, wait)
   return shabadou#make_quickrun_hook_anim(a:name, a:aa_list, a:wait)
 endfunction
 " }}}
-
 
 " niku_do_rei {{{
 call quickrun#module#register(s:make_quickrun_hook_anim(
@@ -552,7 +533,6 @@ call quickrun#module#register(s:make_quickrun_hook_anim(
 \), 1)
 " }}}
 
-
 " kotoura_san {{{
 call quickrun#module#register(s:make_quickrun_hook_anim(
 \  "kotoura_san",
@@ -564,7 +544,6 @@ call quickrun#module#register(s:make_quickrun_hook_anim(
 \  3,
 \), 1)
 " }}}
-
 
 " quickrun-run_prevconfig {{{
 let s:prev_config={}
@@ -606,7 +585,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-add_cmdopt {{{
 let s:hook = {
 \  "name" : "add_cmdopt",
@@ -633,7 +611,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-hook-add-include-option {{{
 let s:hook = {
 \  "name" : "add_include_option",
@@ -658,7 +635,6 @@ endfunction
 call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
-
 
 " quickrun-hook-dogrun {{{
 function! s:resize(str, len)
@@ -716,7 +692,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-location_list_replate_tempname_to_bufnr {{{
 let s:hook = shabadou#make_hook_points_module({
 \  "name" : "location_list_replate_tempname_to_bufnr",
@@ -761,7 +736,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-boost_link {{{
 let s:hook = {
 \  "name" : "boost_link",
@@ -790,7 +764,6 @@ call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
 
-
 " quickrun-redraw_exit{{{
 let s:hook = {
 \  "name" : "redraw_exit",
@@ -807,9 +780,6 @@ endfunction
 call quickrun#module#register(s:hook, 1)
 unlet s:hook
 " }}}
-
-" }}}
-
 
 " quickrun-config {{{
 
@@ -1431,7 +1401,6 @@ vnoremap <Space>rp :ReplaceRegion ruby/utf8<CR>
 
 " }}}
 
-
 " マッピング {{{
 " QuickRun
 
@@ -1445,10 +1414,6 @@ endfunction
 " 実行
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 " }}}
-
-
-" }}}
-
 
 " watchdogs.vim {{{
 let g:watchdogs_check_CursorHold_enable = 1

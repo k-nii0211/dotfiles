@@ -3,6 +3,8 @@
 	email = nii_kenichi@cyberagent.co.jp
 [color]
 	ui = auto
+	status = auto
+	diff = auto
 [push]
 	default = simple
 [core]
@@ -14,6 +16,6 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [diff]
-  external = ~/dotfiles/bin/vim_diff_wrapper
+	external = ~/dotfiles/bin/vim_diff_wrapper
 [pager]
-  diff =
+	diff =
