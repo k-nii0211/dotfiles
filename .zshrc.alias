@@ -11,7 +11,7 @@ linux*)
   ;;
 esac
 
-[ `which htop 2> /dev/null` ] && alias top='htop'
+alias top='htop'
 
 alias v='vim'
 
@@ -34,6 +34,7 @@ alias less='less -r'
 alias 'grep'='grep --color=auto -ERUIn'
 
 # tmux
+alias t='tmux'
 alias tma='tmux attach'
 alias tma0='tmux attach -t 0'
 alias tma1='tmux attach -t 1'
@@ -41,15 +42,19 @@ alias tma2='tmux attach -t 2'
 alias tml='tmux list-sessions'
 
 # git
-alias ga='git add .'
-alias gc='git commit -am'
-alias gs='git status -s -b'
-alias gls='git ls-files'
-alias gshow='git show'
-alias ggrep='git grep --line-number --show-function --color --heading --break'
-alias gst='git log --date=short --max-count=1 --pretty=format:"%Cgreen%h %cd %Cblue%cn%x09%Creset%s" | tail -1 && echo "" && git status -s -b'
-alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative'
-alias glp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative --patch'
+alias g='git'
+#alias ga='git add .'
+#alias gc='git commit -am'
+#alias gs='git status -s -b'
+#alias gls='git ls-files'
+#alias gshow='git show'
+#alias ggrep='git grep --line-number --show-function --color --heading --break'
+#alias gst='git log --date=short --max-count=1 --pretty=format:"%Cgreen%h %cd %Cblue%cn%x09%Creset%s" | tail -1 && echo "" && git status -s -b'
+#alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative'
+#alias glp='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset" --abbrev-commit --date=relative --patch'
+
+alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias -g LR='`git branch -a | peco --query "remotes/ " --prompt "GIT REMOTE BRANCH>" | head -n 1 | sed "s/^\*\s*//" | sed "s/remotes\/[^\/]*\/\(\S*\)/\1 \0/"`'
 
 grepvim() {
     XFS=`grep -ERUInl $* | uniq | xargs`

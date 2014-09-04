@@ -15,6 +15,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " {{{
+  NeoBundle 'saihoooooooo/glowshi-ft.vim'
   NeoBundle 'scrooloose/nerdcommenter.git'
   NeoBundle 'c9s/cascading.vim'
 "  NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -113,8 +114,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Syntax {{{
   NeoBundle 'haml.zip'
-  NeoBundle 'JavaScript-syntax'
-"  NeoBundle 'jQuery'
+"  NeoBundle 'JavaScript-syntax'
+  NeoBundle 'Simple-Javascript-Indenter'
+  NeoBundleLazy 'jelera/vim-javascript-syntax', { 'autoload':{'filetypes':['javascript']} }
+  NeoBundle 'jquery'
 "  NeoBundle 'nginx.vim'
   NeoBundle 'tpope/vim-markdown'
 "  NeoBundle 'kchmck/vim-coffee-script'

@@ -1,1 +1,4 @@
 git status -s | awk '/^ D/{print git checkout }'
+
+curl http://ipinfo.io/
+

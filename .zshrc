@@ -58,3 +58,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export ARCHFLAGS="-arch x86_64"
 
 [ -f ~/dotfiles/.zshrc.custom ] && source ~/dotfiles/.zshrc.custom
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[ -f ~/.gvm/bin/gvm-init.sh ] && source ~/.gvm/bin/gvm-init.sh

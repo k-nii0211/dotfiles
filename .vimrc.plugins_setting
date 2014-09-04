@@ -143,6 +143,17 @@ if neobundle#tap('vim-indent-guides.vim')
 endif " }}}
 
 "------------------------------------
+" Simple-Javascript-Intenter
+"------------------------------------
+let g:SimpleJsIndenter_BriefMode = 2
+let g:SimpleJsIndenter_CaseIndentLevel = -1
+
+"------------------------------------
+" jquery
+"------------------------------------
+au BufRead, BufNewFile jquery.*.js set ft=javascript syntaxjquery
+
+"------------------------------------
 " smooth_scroll.vim
 "------------------------------------
 map  :call SmoothScroll("d",1, 1)<CR>

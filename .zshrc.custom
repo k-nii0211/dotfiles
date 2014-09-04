@@ -330,6 +330,49 @@ function cwaf() {
   LANG=C command ./waf "$@" 2>&1 | sed -e "s@[Ee]rror:.*@$e_RED&$e_normal@g" -e "s@cannot¥sfind.*@$e_RED&$e_normal@g" -e "s@[Ww]arning:.*@$e_BLUE&$e_normal@g"
 }
 
+if (( ${+commands[peco]} )); then
+  function peco-select-history() {
+      local tac
+      if which tac > /dev/null; then
+          tac="tac"
+      else
+          tac="tail -r"
+      fi
+      BUFFER=$(\history -n 1 | \
+          eval $tac | \
+          peco --query "$LBUFFER")
+      CURSOR=$#BUFFER
+      zle clear-screen
+  }
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
+
+  function peco-go-to-dir () {
+    local line
+    local selected="$(
+      {
+        (
+          autoload -Uz chpwd_recent_filehandler
+          chpwd_recent_filehandler && for line in $reply; do
+            if [[ -d "$line" ]]; then
+              echo "$line"
+            fi
+          done
+        )
+        ghq list --full-path
+        for line in *(-/) ${^cdpath}/*(N-/); do echo "$line"; done | sort -u
+      } | peco --query "$LBUFFER"
+    )"
+    if [ -n "$selected" ]; then
+      BUFFER="cd ${(q)selected}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N peco-go-to-dir
+  bindkey '^[g' peco-go-to-dir
+fi
+
 ## Completion configuration
 #
 fpath=(~/.zsh/functions/Completion ${fpath})

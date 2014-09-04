@@ -17,3 +17,4 @@ setup_pip
 setup_neobundle
 
 echo "setup done."
+echo "setup done."

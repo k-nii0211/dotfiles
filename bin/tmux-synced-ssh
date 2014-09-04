@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -z `which tmux 2> /dev/null` ] && echo "no such tmux"; exit 1
+#[ -z `which tmux 2> /dev/null` ] && echo "no such tmux"; exit 1
 
 tmux start-server
 tmux new-session -d -n tmux-ssh-window -s tmux-ssh
