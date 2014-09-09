@@ -29,4 +29,4 @@
 	c = commit -v
 	p = pull
 [ghq]
-	root = /home/share/nii_kenichi/workspace
+	root = ~/workspace
