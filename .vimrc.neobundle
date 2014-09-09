@@ -15,7 +15,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " {{{
-  NeoBundle 'saihoooooooo/glowshi-ft.vim'
+"  NeoBundle 'saihoooooooo/glowshi-ft.vim'
   NeoBundle 'scrooloose/nerdcommenter.git'
   NeoBundle 'c9s/cascading.vim'
 "  NeoBundle 'nathanaelkane/vim-indent-guides'

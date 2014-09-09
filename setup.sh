@@ -13,7 +13,7 @@ for item in `cat dotfiles.lst`; do
 done
 
 setup_rbenv
-setup_pip
+#setup_pip
 setup_neobundle
 
 echo "setup done."

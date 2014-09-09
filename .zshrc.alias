@@ -62,6 +62,9 @@ grepvim() {
       vim `grep -ERUInl $* | uniq | xargs`
     fi
 }
+function gim() {
+    vim `git ls-files | peco`
+  }
 alias grv='grepvim'
 
 ssh_config() {
